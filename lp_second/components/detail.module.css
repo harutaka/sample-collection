@@ -1,0 +1,37 @@
+.detail {
+  margin-bottom: 100px;
+}
+.content {
+  display: flex;
+  align-items: flex-start;
+}
+.title {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.img {
+  margin-right: 60px;
+}
+.text p {
+  margin-bottom: 20px;
+}
+.content dl {
+  display: flex;      /* dt、ddを横並びにする */
+  flex-wrap: wrap;    /* dtとddが100%になったら、横並びを折り返す */
+  padding: 16px 0;
+  margin-bottom: 25px;
+  border-top: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+}
+.content dt {
+  width: 25%;
+}
+.content dd {
+  width: 75%;
+}
+.link {
+  color: #333;
+}
+.link:hover {
+  opacity: 0.8;
+}

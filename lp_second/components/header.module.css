@@ -1,0 +1,12 @@
+.header {
+  margin-top: 60px;
+}
+.siteTitle {
+  width: 160px;
+  line-height: 1px;
+  margin-bottom: 15px;
+}
+/* aタグのリンク範囲を親要素のサイズに広げる */
+.siteTitle a {
+  display: block;
+}

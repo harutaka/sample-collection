@@ -1,0 +1,36 @@
+{
+  "name": "lp_first",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false
+  },
+  "dependencies": {
+    "@kuma-ui/core": "^1.4.1",
+    "@mantine/core": "^7.0.2",
+    "@mantine/hooks": "^7.0.2",
+    "next": "^13.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@kuma-ui/next-plugin": "^1.1.9",
+    "@types/node": "^20.7.0",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^13.5.3",
+    "postcss": "^8.4.30",
+    "postcss-preset-mantine": "^1.7.0",
+    "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}

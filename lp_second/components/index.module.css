@@ -1,0 +1,15 @@
+.index {
+  background-color: #fff;
+  padding: 30px 0;
+  margin-bottom: 60px;
+}
+.indexList {
+  margin-left: 20px;
+}
+.indexList li {
+  margin-bottom: 20px;
+}
+/* リストの最後は下にマージンをつけない */
+.indexList li:last-child {
+  margin-bottom: 0;
+}
