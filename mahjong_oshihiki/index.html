@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link href="common.css" rel="stylesheet" />
+    <title>麻雀の押し引きシミュレーション</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>麻雀の押し引きシミュレーション</h2>
+
+      <div class="explain">
+        このシミュレーションでは相手2人を完全ベタ降り。1人を全ツで考えています。<br />
+        全ツの人に対した状況別の期待値を出す計算機です。<br />
+        リーチ判断などの助けにぜひ。期待値が高いほど有利です。<br />
+      </div>
+
+      <div class="explain">
+        また対リーチに対し全ツせず、ベタ降りする場合のシミュレーションを<br />
+        追加した<a href="software.html">ソフト版</a>も公開しています。<br />
+        興味がある方は上記リンクをクリックしてください。<br />
+      </div>
+
+      <div class="explain">
+        さらにツモ率のシミュレーションも公開しています。<br />
+        ツモ率のシミュレーションは<a href="tsumoritsu.html">こちら</a>です。<br />
+      </div>
+
+      <form name="oshihiki_data">
+        <div class="mb-3 row">
+          <label for="jibunagari" class="form-label col-sm-2">自分和了点</label>
+          <div class="col-sm-6">
+            <select name="jibunagari" id="jibunagari" class="form-select">
+              <option>1000</option>
+              <option>1300</option>
+              <option>2000</option>
+              <option>2600</option>
+              <option>3000</option>
+              <option>3900</option>
+              <option selected>5200</option>
+              <option>5800</option>
+              <option>6000</option>
+              <option>6400</option>
+              <option>8000</option>
+              <option>9600</option>
+              <option>12000</option>
+              <option>16000</option>
+              <option>18000</option>
+              <option>24000</option>
+              <option>32000</option>
+              <option>36000</option>
+              <option>48000</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="jibunhoju" class="form-label col-sm-2">自分放銃点</label>
+          <div class="col-sm-6">
+            <select name="jibunhoju" id="jibunhoju" class="form-select">
+              <option>1000</option>
+              <option>1300</option>
+              <option>2000</option>
+              <option>2600</option>
+              <option>3000</option>
+              <option>3900</option>
+              <option>5200</option>
+              <option>5800</option>
+              <option selected>6000</option>
+              <option>6400</option>
+              <option>8000</option>
+              <option>9600</option>
+              <option>12000</option>
+              <option>16000</option>
+              <option>18000</option>
+              <option>24000</option>
+              <option>32000</option>
+              <option>36000</option>
+              <option>48000</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="tsumorare" class="form-label col-sm-2">ツモられ失点</label>
+          <div class="col-sm-6">
+            <select name="tsumorare" id="tsumorare" class="form-select">
+              <option>ツモられ失点</option>
+              <option>500</option>
+              <option>1000</option>
+              <option selected>1500</option>
+              <option>2000</option>
+              <option>4000</option>
+              <option>6000</option>
+              <option>8000</option>
+              <option>12000</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="jibunreach" class="form-label col-sm-2">自分リーチ順目</label>
+          <div class="col-sm-6">
+            <select name="jibunreach" id="jibunreach" class="form-select">
+              <option>自分リーチ順目</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option selected>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="aitetenpai" class="form-label col-sm-2">相手テンパイ順目</label>
+          <div class="col-sm-6">
+            <select name="aitetenpai" id="aitetenpai" class="form-select">
+              <option>相手テンパイ順目</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option selected="selected">10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="jibunnokori" class="form-label col-sm-2">自分残り和了牌数</label>
+          <div class="col-sm-6">
+            <select name="jibunnokori" id="jibunnokori" class="form-select">
+              <option>自分残り和了牌数</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option selected>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="jibunnokori" class="form-label col-sm-2">相手残り和了牌数</label>
+          <div class="col-sm-6">
+            <select name="jibunnokori" id="jibunnokori" class="form-select">
+              <option>相手残り和了牌数</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option selected="selected">6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="button" class="btn btn-primary" value="実行" onClick="macalc()" />
+      </form>
+
+      <div class="card end">
+        <div class="card-header">結果</div>
+        <div class="card-body resultarea-index">
+          <p id="result" class="card-text"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="oshihiki.js"></script>
+  </body>
+</html>
