@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: server/
+      dockerfile: Dockerfile
+    volumes:
+      - ./server/:/scripts/
+      - server_node_modules:/scripts/node_modules
+    ports:
+      - 3001:3001
+  
+  client:
+    build:
+      context: client/
+      dockerfile: Dockerfile
+    volumes:
+      - ./client/:/scripts/
+      - client_node_modules:/scripts/node_modules
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+
+volumes:
+  server_node_modules:
+  client_node_modules:
