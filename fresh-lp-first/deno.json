@@ -10,7 +10,10 @@
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "exclude": ["**/_fresh/*", "node_modules", "lp_first/*"],
+  "fmt": {
+    "lineWidth": 120
+  },
+  "exclude": ["**/_fresh/*", "node_modules"],
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "preact": "https://esm.sh/preact@10.22.0",
