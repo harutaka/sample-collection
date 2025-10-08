@@ -1,0 +1,15 @@
+{
+  "name": "markdown-mpe",
+  "version": "1.0.0",
+  "description": "markdown preview enhanced template",
+  "scripts": {
+    "export": "node src/htmlExport.js",
+    "markdown": "node src/markdownExport.js"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.17.1",
+  "devDependencies": {
+    "crossnote": "^0.9.15",
+    "prettier": "^3.6.2"
+  }
+}
