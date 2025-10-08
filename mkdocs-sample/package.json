@@ -1,0 +1,6 @@
+{
+  "name": "mkdocs-sample",
+  "devDependencies": {
+    "prettier": "^3"
+  }
+}
