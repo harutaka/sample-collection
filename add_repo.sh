@@ -2,7 +2,7 @@
 
 # 引数チェック
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 <GitHub URL>"
+    echo "Usage: $0 <GitHub URL(.gitは抜く)>"
     exit 1
 fi
 
