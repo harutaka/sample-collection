@@ -1,0 +1,9 @@
+{
+  "workbench.colorTheme": "Iceberg",
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.autofetch": true,
+  "cline.preferredLanguage": "Japanese - 日本語"
+}
